@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/tabledecor.css'])
-    <title>Document</title>
+    <title>List Kelas</title>
 </head>
 <body>
     <button><a href="/peserta">View Peserta</a></button>
@@ -17,11 +17,11 @@
 
     <table>
         <tr>
-            <th  style="border: 1px solid black;">ID</th>
-            <th  style="border: 1px solid black;">Nama Kelas</th>
-            <th  style="border: 1px solid black;">Deskripsi Singkat</th>
-            <th  style="border: 1px solid black;">Instruktur</th>
-            <th  style="border: 1px solid black;">Action</th>
+            <th>ID</th>
+            <th>Nama Kelas</th>
+            <th>Deskripsi Singkat</th>
+            <th>Instruktur</th>
+            <th>Action</th>
         </tr>
         @foreach($kelas as $kls)
         <tr>

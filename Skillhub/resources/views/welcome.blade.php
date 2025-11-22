@@ -9,6 +9,8 @@
 <body>
     <h1>Welcome to Skillhub</h1>
     <p>Your gateway to learning new skills.</p>
-    
+    <button><a href="/kelas">Lihat Kelas</a></button>
+    <button><a href="/peserta">Lihat Peserta</a></button>
+
 </body>
 </html>
