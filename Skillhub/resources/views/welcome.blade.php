@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-
+    <h1>Welcome to Skillhub</h1>
+    <p>Your gateway to learning new skills.</p>
+    
 </body>
 </html>

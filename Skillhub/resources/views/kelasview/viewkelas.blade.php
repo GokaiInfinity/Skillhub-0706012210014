@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/tabledecor.css') }}" rel="stylesheet">
+    @vite(['resources/css/tabledecor.css'])
     <title>Document</title>
 </head>
 <body>
@@ -15,13 +15,13 @@
     <button><a href="/addkelas">Tambah Kelas</a></button>
     <br><br>
 
-    <table style="border: 1px solid black;">
+    <table>
         <tr>
-            <th>ID</th>
-            <th>Nama Kelas</th>
-            <th>Deskripsi</th>
-            <th>Instruktur</th>
-            <th>Action</th>
+            <th  style="border: 1px solid black;">ID</th>
+            <th  style="border: 1px solid black;">Nama Kelas</th>
+            <th  style="border: 1px solid black;">Deskripsi Singkat</th>
+            <th  style="border: 1px solid black;">Instruktur</th>
+            <th  style="border: 1px solid black;">Action</th>
         </tr>
         @foreach($kelas as $kls)
         <tr>
