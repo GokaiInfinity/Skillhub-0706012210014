@@ -37,3 +37,5 @@ Route::get('/editkelas/{kelas_id}', [KelasController::class, 'editkelasview']);
 Route::post('/updatekelas/{kelas_id}', [KelasController::class, 'updatekelas']);
 // Hapus Kelas
 Route::get('/deletekelas/{kelas_id}', [KelasController::class, 'deletekelas']);
+// Hapus Peserta dari kelas
+Route::delete('/removepesertafromkelas/{peserta_id}/{kelas_id}', [PesertaKelasController::class, 'removePesertaFromKelas']);

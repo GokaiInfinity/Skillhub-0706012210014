@@ -8,16 +8,22 @@ use App\Models\Kelas;
 
 class PesertaKelasController extends Controller
 {
+    // Tampilan form untuk menambahkan peserta ke kelas
     public function addPesertatoKelas($peserta_id){
+        // Mengambil data peserta berdasarkan ID
         $peserta = peserta::findOrFail($peserta_id);
+        // Mengambil semua kelas yang tersedia
         $allkelas = Kelas::all();
 
+        // Mengarahkan ke view pada file addpesertatokelas.blade.php dengan data peserta dan semua kelas
         return view("pesertaview.addpesertatokelas", compact('peserta', 'allkelas'));
     }
 
     public function insertPesertaToKelas(Request $request, $peserta_id){
         $peserta = peserta::findOrFail($peserta_id);
-        $peserta->ikutkursus()->attach($request->kelas_id);
+
+        // Mencegah duplikasi entri dengan syncWithoutDetaching
+        $peserta->ikutkursus()->syncWithoutDetaching([$request->kelas_id]);
 
         return redirect('/peserta');
     }
@@ -40,7 +46,7 @@ class PesertaKelasController extends Controller
         $peserta = peserta::findOrFail($peserta_id);
         $peserta->ikutkursus()->detach($kelas_id);
 
-        return redirect('/peserta');
+        return redirect('/detailkelas/' . $kelas_id);
     }
 
 

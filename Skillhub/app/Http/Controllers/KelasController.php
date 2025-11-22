@@ -17,9 +17,14 @@ class KelasController extends Controller
 
     }
 
-    public function detailKelas()
+    public function detailKelas($kelas_id)
     {
+    //     $peserta = peserta::with('ikutkursus')->find($peserta_id);
 
+    //     return view('pesertaview.detailpeserta',compact('peserta'));
+        $kelas = kelas::with('parapeserta')->find($kelas_id);
+
+        return view('kelasview.detailkelas',compact('kelas'));
     }
 
     public function addKelasView()
@@ -66,5 +71,6 @@ class KelasController extends Controller
 
         return redirect('/kelas');
     }
+
 
 }
