@@ -12,9 +12,7 @@ class peserta extends Model
 
     protected $fillable = ['nama', 'email', 'tanggal_lahir'];
 
-    public function kursus()
-    {
-        return $this->belongsToMany(kelas::class);
+    public function ikutkursus(){
+        return $this->belongsToMany(kelas::class, 'peserta_kelas','peserta_id','kelas_id');
     }
-
 }

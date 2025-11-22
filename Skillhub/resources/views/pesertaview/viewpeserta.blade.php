@@ -31,6 +31,7 @@
                 <button>Detail</button>
                 <button><a href="/editpeserta/{{ $peserta->id }}"> Edit Peserta</a> </button>
                 <button><a href="/deletepeserta/{{ $peserta->id }}"> Hapus Peserta</a></button>
+                <button><a href="/addpesertatokelas/{{ $peserta->id }}"> Tambah Kelas Pada Peserta</a></button>
             </td>
         </tr>
         @endforeach

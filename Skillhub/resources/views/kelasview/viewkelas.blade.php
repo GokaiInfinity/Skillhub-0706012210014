@@ -33,6 +33,7 @@
                 <button>Detail</button>
                 <button><a href="/editkelas/{{ $kls->id }}"> Edit Kelas</a> </button>
                 <button><a href="/deletekelas/{{ $kls->id }}"> Hapus Kelas</button>
+                <button><a href="/tambahpesertapadakelas/{{ $kls->id }}"> Tambah Peserta Pada Kelas</a></button>
             </td>
         </tr>
         @endforeach

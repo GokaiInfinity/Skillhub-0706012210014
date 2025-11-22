@@ -12,8 +12,8 @@ class kelas extends Model
 
     protected $fillable = ['nama_kelas', 'deskripsi_singkat', 'instruktur'];
 
-    public function peserta()
-    {
-        return $this->belongsToMany(peserta::class);
+    public function parapeserta(){
+        return $this->belongsToMany(peserta::class, 'peserta_kelas','kelas_id','peserta_id');
     }
+
 }
