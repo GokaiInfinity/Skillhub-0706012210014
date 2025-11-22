@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('pesertas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->string('email');
+            $table->date('tanggal_lahir');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

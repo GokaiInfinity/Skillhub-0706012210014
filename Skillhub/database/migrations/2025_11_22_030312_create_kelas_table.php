@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_kelas');
+            $table->string('deskripsi_singkat')->nullable();
+            $table->string('instruktur');
             $table->timestamps();
         });
     }
