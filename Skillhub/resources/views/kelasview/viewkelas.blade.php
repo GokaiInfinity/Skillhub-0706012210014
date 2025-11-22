@@ -30,10 +30,9 @@
             <td>{{ $kls->deskripsi_singkat }}</td>
             <td>{{ $kls->instruktur }}</td>
             <td>
-                <button>Detail</button>
+                <button><a href ="/detailkelas/{{ $kls->id }}">Detail Kelas</a></button>
                 <button><a href="/editkelas/{{ $kls->id }}"> Edit Kelas</a> </button>
                 <button><a href="/deletekelas/{{ $kls->id }}"> Hapus Kelas</button>
-                <button><a href="/tambahpesertapadakelas/{{ $kls->id }}"> Tambah Peserta Pada Kelas</a></button>
             </td>
         </tr>
         @endforeach

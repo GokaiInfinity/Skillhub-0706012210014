@@ -7,13 +7,18 @@ use App\Models\kelas;
 
 class KelasController extends Controller
 {
-    public function kelasview()
+    public function kelasView()
     {
         $kelas = kelas::all();
 
         return view('kelasview.viewkelas',[
             "kelas" => $kelas
         ]);
+
+    }
+
+    public function detailKelas()
+    {
 
     }
 
@@ -33,18 +38,18 @@ class KelasController extends Controller
         return redirect('/kelas');
     }
 
-    public function editKelasView($id)
+    public function editKelasView($kelas_id)
     {
-        $kelas = kelas::find($id);
+        $kelas = kelas::find($kelas_id);
 
         return view('kelasview.editkelas',[
             "kelas" => $kelas
         ]);
     }
 
-    public function updateKelas(Request $request, $id)
+    public function updateKelas(Request $request, $kelas_id)
     {
-        $kelas = kelas::find($id);
+        $kelas = kelas::find($kelas_id);
         $kelas->update([
             'nama_kelas' => $request->nama_kelas,
             'deskripsi_singkat' => $request->deskripsi_singkat,
@@ -54,9 +59,9 @@ class KelasController extends Controller
         return redirect('/kelas');
     }
 
-    public function deleteKelas($id)
+    public function deleteKelas($kelas_id)
     {
-        $kelas = kelas::find($id);
+        $kelas = kelas::find($kelas_id);
         $kelas->delete();
 
         return redirect('/kelas');

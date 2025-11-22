@@ -11,27 +11,29 @@ Route::get('/', function () {
 
 // View Peserta
 Route::get('/peserta', [PesertaController::class, 'pesertaview']);
+// Detail Peserta
+Route::get('/detailpeserta/{peserta_id}', [PesertaController::class, 'detailpeserta']);
 // Tambah dan Insert Peserta
 Route::get('/addpeserta', [PesertaController::class, 'addpesertaview']);
 Route::post('/insertpeserta', [PesertaController::class, 'insertpeserta']);
 // Edit dan update Peserta
-Route::get('/editpeserta/{id}', [PesertaController::class, 'editpesertaview']);
-Route::post('/updatepeserta/{id}', [PesertaController::class, 'updatepeserta']);
+Route::get('/editpeserta/{peserta_id}', [PesertaController::class, 'editpesertaview']);
+Route::post('/updatepeserta/{peserta_id}', [PesertaController::class, 'updatepeserta']);
 // Hapus Peserta
-Route::get('/deletepeserta/{id}', [PesertaController::class, 'deletepeserta']);
-
-
+Route::get('/deletepeserta/{peserta_id}', [PesertaController::class, 'deletepeserta']);
 // Tambah Peserta ke Kelas
-Route::get('/addpesertatokelas/{id}', [PesertaKelasController::class, 'addpesertatokelas']);
-Route::post('/insertpesertatokelas/{id}', [PesertaKelasController::class, 'insertpesertatokelas']);
+Route::get('/addpesertatokelas/{peserta_id}', [PesertaKelasController::class, 'addpesertatokelas']);
+Route::post('/insertpesertatokelas/{peserta_id}', [PesertaKelasController::class, 'insertpesertatokelas']);
 
 // View Kelas
 Route::get('/kelas', [KelasController::class, 'kelasview']);
+// Detail Kelas
+Route::get('/detailkelas/{kelas_id}', [KelasController::class, 'detailkelas']);
 // Tambah dan insert kelas
 Route::get('/addkelas', [KelasController::class, 'addkelasview']);
 Route::post('/insertkelas', [KelasController::class, 'insertkelas']);
 // Edit dan update kelas
-Route::get('/editkelas/{id}', [KelasController::class, 'editkelasview']);
-Route::post('/updatekelas/{id}', [KelasController::class, 'updatekelas']);
+Route::get('/editkelas/{kelas_id}', [KelasController::class, 'editkelasview']);
+Route::post('/updatekelas/{kelas_id}', [KelasController::class, 'updatekelas']);
 // Hapus Kelas
-Route::get('/deletekelas/{id}', [KelasController::class, 'deletekelas']);
+Route::get('/deletekelas/{kelas_id}', [KelasController::class, 'deletekelas']);

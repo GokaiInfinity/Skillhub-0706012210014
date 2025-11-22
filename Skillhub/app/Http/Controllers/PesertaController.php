@@ -32,18 +32,25 @@ class PesertaController extends Controller
         return redirect('/peserta');
     }
 
-    public function editpesertaview($id)
+    public function detailpeserta($peserta_id)
     {
-        $peserta = peserta::find($id);
+        $peserta = peserta::with('ikutkursus')->find($peserta_id);
+
+        return view('pesertaview.detailpeserta',compact('peserta'));
+    }
+
+    public function editpesertaview($peserta_id)
+    {
+        $peserta = peserta::find($peserta_id);
 
         return view('pesertaview.editpeserta',[
             "peserta" => $peserta
         ]);
     }
 
-    public function updatepeserta(Request $request, $id)
+    public function updatepeserta(Request $request, $peserta_id)
     {
-        $peserta = peserta::find($id);
+        $peserta = peserta::find($peserta_id);
         $peserta->update([
             'nama' => $request->nama,
             'email' => $request->email,
@@ -53,11 +60,12 @@ class PesertaController extends Controller
         return redirect('/peserta');
     }
 
-    public function deletepeserta($id)
+    public function deletepeserta($peserta_id)
     {
-        $peserta = peserta::find($id);
+        $peserta = peserta::find($peserta_id);
         $peserta->delete();
 
         return redirect('/peserta');
     }
+
 }

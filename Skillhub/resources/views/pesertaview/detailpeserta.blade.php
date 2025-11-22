@@ -13,8 +13,8 @@
     <p><strong>Tanggal Lahir:</strong> {{ $peserta->tanggal_lahir }}</p>
     <h2>Kelas yang diikuti</h2>
     <ul>
-        @foreach($peserta->kursus as $kelas)
-            <li>{{ $kelas->nama_kelas }} - {{ $kelas->deskripsi_singkat }}</li>
+        @foreach($peserta->ikutkursus as $kelas)
+            <li>{{ $kelas->nama_kelas }}</li>
         @endforeach
     </ul>
 
